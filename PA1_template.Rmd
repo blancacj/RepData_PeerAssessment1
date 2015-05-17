@@ -9,7 +9,7 @@ This assignment analyed data obtained from a personal acitivity monitoring devic
 
 ## Loading and preprocessing the data
 
-```{r}
+```{r,echo=TRUE}
 ## make sure the activity.zip is already unzipped
 activity<-read.csv("activity.csv")
 ## summary of the data
@@ -23,7 +23,7 @@ activity$date<-as.Date(activity$date,"%Y-%m-%d")
 
 In this part, the dataset was split based on the date, and the sum, mean, and median of the total number of steps taken per day were calcualted.
 
-```{r}
+```{r,echo=TRUE}
 s<-split(activity,activity$date)
 t_step<-sapply(s,function(x) sum(x[,"steps"]))
 hist(t_step,xlab="steps",ylab="frequency",main="total number of steps taken per day")
@@ -39,7 +39,7 @@ The histogram shows the frequency distribution of the total number of steps take
 
 In this part, the dataset was split based on the interval, and the mean of the steps taken at each interval was calcuated through all the days.
 
-```{r}
+```{r,echo=TRUE}
 ## split the dateset based on interval
 s2<-split(activity,activity$interval)
 t_step2<-sapply(s2,function(x) mean(x[,"steps"],na.rm=TRUE))
@@ -54,7 +54,7 @@ The plot shows the average number of steps taken at each interval through all th
 ## Imputing missing values
 In this part, the missing values in the steps column were imputed using the average number of steps occurs at each interval
 
-```{r}
+```{r,echo=TRUE}
 #calculate and report the total number of missing values in the dataset
 sum(is.na(activity$steps))
 #use the mean for that 5-minute interval to fill in the missing values
@@ -85,7 +85,7 @@ The total number of missing steps is 2304. After filling the missing values for 
 ## Are there differences in activity patterns between weekdays and weekends?
 This part analyzed the differences in activity patterns between weekdays and weekends. The dataset is split based on both interval and weekday ("weekend","weekday").
 
-```{r}
+```{r,echo=TRUE}
 ## add a new column to the dataset indicating weekday or weekend
 new_activity$weekday<-weekdays(new_activity$date)
 new_activity[new_activity$weekday %in% c("Saturday","Sunday"),]$weekday<-"weekend"
