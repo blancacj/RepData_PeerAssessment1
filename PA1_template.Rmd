@@ -1,8 +1,9 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
+title: 'Reproducible Research: Peer Assessment 1'
+output:
+  word_document: default
   html_document:
-    keep_md: true
+    keep_md: yes
 ---
 This assignment analyed data obtained from a personal acitivity monitoring device. The data was clollected every 5 mintues through out the whole day during the months of October and November in 2012.The dataset contains three variables: the number of steps taken in each 5 minitues intervals each day, date, and time.This report summaried: 1) the mean total number of steps taken perday; 2) the average daily activity pattern; 3) the mean total number of steps taken perday after the missing data of steps were imputed; 4) the difference in activity patterns between weekend and weekday.
 
