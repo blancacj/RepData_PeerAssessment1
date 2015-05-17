@@ -9,7 +9,7 @@ This assignment analyed data obtained from a personal acitivity monitoring devic
 
 ## Loading and preprocessing the data
 
-```{r,echo=TRUE}
+```{r}
 ## make sure the activity.zip is already unzipped
 activity<-read.csv("activity.csv")
 ## summary of the data
@@ -80,7 +80,7 @@ mean(t_step3,na.rm=TRUE)
 median(t_step3,na.rm=TRUE)
 ```
 
-The total number of missing steps is 2304. After filling the missing values for steps using the average steps at that interval.Aboving plot shows the total number of steps taken per day after the missing values are filled. Note that the total number of steps taken per day has increased
+The total number of missing steps is 2304. After filling the missing values for steps using the average steps at that interval.Aboving plot shows the total number of steps taken per day after the missing values are filled. Note that the total number of steps taken per day has increased. The average of the total number of steps taken per day does not change, but the median of the total number of steps taken per day changes because the number of null NA points increases. 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 This part analyzed the differences in activity patterns between weekdays and weekends. The dataset is split based on both interval and weekday ("weekend","weekday").
